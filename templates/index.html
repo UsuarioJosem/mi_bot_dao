@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Propuestas DAO</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f3f3f3;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        form {
+            display: inline;
+        }
+        button {
+            padding: 6px 10px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📜 Propuestas DAO</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Descripción</th>
+            <th>Votos Sí</th>
+            <th>Votos No</th>
+            <th>¿Ejecutada?</th>
+            <th>Acciones</th>
+        </tr>
+        {% for p in propuestas %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.descripcion }}</td>
+            <td>{{ p.votos_si }}</td>
+            <td>{{ p.votos_no }}</td>
+            <td>{{ p.ejecutada }}</td>
+            <td>
+                <form method="post" action="/votar/{{ p.id }}">
+                    <button type="submit">🗳️ Votar</button>
+                </form>
+                <form method="post" action="/ejecutar/{{ p.id }}">
+                    <button type="submit">🚀 Ejecutar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
