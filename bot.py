@@ -146,7 +146,7 @@ def ciclo():
 
 # ---------------------- AUTOMATIZACIÓN -------------------
 schedule.every(60).minutes.do(ciclo)
-print("🤖 Bot ejecutándose cada 60 minutos. Presiona Ctrl+C para detener.")
+print("🤖 Bot ejecutándose cada 10 minutos. Presiona Ctrl+C para detener.")
 ciclo()  # Ejecuta una vez ahora
 
 def ejecutar_propuestas_pendientes(contract, account, private_key, web3):
