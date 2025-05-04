@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>🤖 Bot DAO - Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #f4f6f8;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .section {
+            background: white;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        }
+        .log {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📊 Panel del Bot DAO</h1>
+
+    <div class="section">
+        <h2>📅 Historial de decisiones del bot</h2>
+        <div class="log">
+            {% for fila in historial %}
+                <p>{{ fila["fecha"] }} — BTC: {{ fila["precio_btc"] }} | ETH: {{ fila["precio_eth"] }} → {{ fila["decision"] }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💸 Fondos Virtuales</h2>
+        <div class="log">
+            {% for linea in fondos_log %}
+                <p>{{ linea.strip() }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
