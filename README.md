@@ -39,10 +39,6 @@ mi_bot_dao/
 └── templates/
 └── index.html # Interfaz web
 
-yaml
-Copiar
-Editar
-
 ---
 
 ## ⚙️ Requisitos
@@ -54,43 +50,14 @@ Editar
 
 PRIVATE_KEY=0xTU_CLAVE_PRIVADA
 
-yaml
-Copiar
-Editar
-
 ---
-
-## ▶️ Cómo ejecutar
-
-1. Instala las dependencias:
-
-```bash
-pip install -r requirements.txt
-Ejecuta el bot:
-
-bash
-Copiar
-Editar
-python3 bot.py
-Ejecuta la interfaz web:
-
-bash
-Copiar
-Editar
-python3 webapp.py
-Y abre: http://localhost:5001
 
 📷 Vista del sistema
 
-
-Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
+![Uploading captura.png…]()
 
 🔒 Seguridad
 No se suben claves privadas (se almacenan en .env)
-
-.env está protegido en .gitignore
-
-El historial Git ha sido limpiado para eliminar cualquier clave previa
 
 🛠️ Futuras mejoras
 Conexión a testnet (Goerli, Sepolia)
