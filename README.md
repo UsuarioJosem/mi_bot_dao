@@ -64,9 +64,12 @@ python3 bot.py
 
 python3 webapp.py
 
-## 📷 Vista del sistema
+📷 Vista del sistema
 
-![captura](captura.png)
+Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
+
+🧪 Modo demo (local)
+Este proyecto funciona íntegramente con Ganache y MetaMask, por lo que puedes probar toda la lógica DAO sin usar tokens reales. Las decisiones del bot se registran en tiempo real y se reflejan en la web.
 
 🔒 Seguridad
 No se suben claves privadas (se almacenan en .env)
