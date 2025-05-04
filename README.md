@@ -64,7 +64,28 @@ python3 bot.py
 
 python3 webapp.py
 
-📷 Vista del sistema
+## 📷 Vista del sistema
+
+![captura](captura.png)
+
+🔒 Seguridad
+No se suben claves privadas (se almacenan en .env)
+
+.env está protegido en .gitignore
+
+El historial Git ha sido limpiado para eliminar cualquier clave previa
+
+🛠️ Futuras mejoras
+Conexión a testnet (Goerli, Sepolia)
+
+Gobernanza avanzada: tiempo de votación, quórum, delegaciones
+
+Análisis de sentimiento social (Twitter, Reddit)
+
+Panel web con más estadísticas
+
+📄 Licencia
+MIT — libre para usar, modificar y compartir.
 
 
 Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
