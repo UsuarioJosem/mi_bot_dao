@@ -27,3 +27,45 @@ Bot inteligente que analiza el mercado cripto (Bitcoin y Ethereum), toma decisio
 ---
 
 ## 🖥️ Estructura del proyecto
+
+mi_bot_dao/
+├── bot.py # Bot principal
+├── webapp.py # Interfaz Flask
+├── deploy.py # Despliegue del contrato
+├── interact.py # Interacción con la DAO
+├── SimpleDAO.sol # Contrato inteligente básico
+├── requirements.txt # Dependencias Python
+├── README.md # Este archivo
+└── templates/
+└── index.html # Interfaz web
+
+
+---
+
+## ⚙️ Requisitos
+
+- Python 3.8 o superior
+- Ganache en ejecución en http://127.0.0.1:7545
+- MetaMask con cuenta de Ganache importada
+- Archivo `.env` con tu clave privada (nunca subir):
+
+
+---
+
+## ▶️ Cómo ejecutar
+
+1. Instala las dependencias:
+
+```bash
+pip install -r requirements.txt
+
+
+python3 bot.py
+
+python3 webapp.py
+
+📷 Vista del sistema
+
+
+Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
+
