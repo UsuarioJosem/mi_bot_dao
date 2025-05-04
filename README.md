@@ -85,9 +85,6 @@ Y abre: http://localhost:5001
 
 Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
 
-🧪 Modo demo (local)
-Este proyecto funciona íntegramente con Ganache y MetaMask, por lo que puedes probar toda la lógica DAO sin usar tokens reales. Las decisiones del bot se registran en tiempo real y se reflejan en la web.
-
 🔒 Seguridad
 No se suben claves privadas (se almacenan en .env)
 
@@ -106,46 +103,3 @@ Panel web con más estadísticas
 
 📄 Licencia
 MIT — libre para usar, modificar y compartir.
-
-yaml
-Copiar
-Editar
-
----
-
-## ✅ Qué hacer ahora
-
-1. 📁 Sube este archivo como `README.md` al repositorio
-2. 📸 Asegúrate de que `captura.png` está en la raíz del repo (misma carpeta que `README.md`)
-3. 🔄 GitHub mostrará automáticamente la vista previa
-4. 📣 Y si quieres: te preparo ahora un texto para compartir en LinkedIn o redes tu primer MVP DAO cripto 🤖
-
-¿Quieres que prepare eso también?
-
-
-
-
-
-
-Tú dijiste:
-me puedes decir donde esta la linea de captura?
-
-
-ChatGPT Plus
-Sí, claro. La línea que incluye la imagen captura.png está aquí, en la sección ## 📷 Vista del sistema del README.md.
-
-Aquí está la línea exacta:
-
-markdown
-Copiar
-Editar
-![captura](captura.png)
-Esta línea le dice a GitHub que muestre la imagen captura.png (que debe estar en la misma carpeta que el README.md, es decir, en la raíz del repositorio).
-
-Justo debajo, hay una pequeña descripción:
-
-markdown
-Copiar
-Editar
-> Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
-
