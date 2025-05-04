@@ -9,7 +9,7 @@ Bot inteligente que analiza el mercado cripto (Bitcoin y Ethereum), toma decisio
 - 📈 Analiza precios actuales y promedios móviles (SMA)
 - 🧠 Detecta señales de compra o sobrevaloración
 - 🗳️ Envía propuestas a una DAO inteligente desplegada en Solidity
-- 🧾 Vota automáticamente y ejecuta propuestas si son aprobadas
+- ✅ Vota automáticamente y ejecuta propuestas aprobadas
 - 🌐 Interfaz web con Flask para visualizar historial y propuestas
 - 📊 Guarda decisiones en `historial_bot.csv`
 
@@ -39,6 +39,9 @@ mi_bot_dao/
 └── templates/
 └── index.html # Interfaz web
 
+yaml
+Copiar
+Editar
 
 ---
 
@@ -49,6 +52,11 @@ mi_bot_dao/
 - MetaMask con cuenta de Ganache importada
 - Archivo `.env` con tu clave privada (nunca subir):
 
+PRIVATE_KEY=0xTU_CLAVE_PRIVADA
+
+yaml
+Copiar
+Editar
 
 ---
 
@@ -58,13 +66,22 @@ mi_bot_dao/
 
 ```bash
 pip install -r requirements.txt
+Ejecuta el bot:
 
-
+bash
+Copiar
+Editar
 python3 bot.py
+Ejecuta la interfaz web:
 
+bash
+Copiar
+Editar
 python3 webapp.py
+Y abre: http://localhost:5001
 
 📷 Vista del sistema
+
 
 Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
 
@@ -90,6 +107,45 @@ Panel web con más estadísticas
 📄 Licencia
 MIT — libre para usar, modificar y compartir.
 
+yaml
+Copiar
+Editar
 
-Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
+---
+
+## ✅ Qué hacer ahora
+
+1. 📁 Sube este archivo como `README.md` al repositorio
+2. 📸 Asegúrate de que `captura.png` está en la raíz del repo (misma carpeta que `README.md`)
+3. 🔄 GitHub mostrará automáticamente la vista previa
+4. 📣 Y si quieres: te preparo ahora un texto para compartir en LinkedIn o redes tu primer MVP DAO cripto 🤖
+
+¿Quieres que prepare eso también?
+
+
+
+
+
+
+Tú dijiste:
+me puedes decir donde esta la linea de captura?
+
+
+ChatGPT Plus
+Sí, claro. La línea que incluye la imagen captura.png está aquí, en la sección ## 📷 Vista del sistema del README.md.
+
+Aquí está la línea exacta:
+
+markdown
+Copiar
+Editar
+![captura](captura.png)
+Esta línea le dice a GitHub que muestre la imagen captura.png (que debe estar en la misma carpeta que el README.md, es decir, en la raíz del repositorio).
+
+Justo debajo, hay una pequeña descripción:
+
+markdown
+Copiar
+Editar
+> Esta imagen muestra el historial de decisiones del bot y la interacción con la DAO simulada en local.
 
