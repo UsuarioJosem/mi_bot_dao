@@ -8,9 +8,11 @@ Bot inteligente que analiza el mercado cripto (Bitcoin y Ethereum), toma decisio
 
 - 📈 Analiza precios actuales y promedios móviles (SMA)
 - 🧠 Detecta señales de compra o sobrevaloración
+- 💡 Aplica lógica avanzada de inversión con doble SMA (cruce dorado y cruce de la muerte)
+- 💸 Simula operaciones de compra/venta y registra en `fondos_virtuales.log`
 - 🗳️ Envía propuestas a una DAO inteligente desplegada en Solidity
 - ✅ Vota automáticamente y ejecuta propuestas aprobadas
-- 🌐 Interfaz web con Flask para visualizar historial y propuestas
+- 🌐 Interfaz web con Flask para visualizar historial y movimientos virtuales
 - 📊 Guarda decisiones en `historial_bot.csv`
 
 ---
@@ -28,16 +30,18 @@ Bot inteligente que analiza el mercado cripto (Bitcoin y Ethereum), toma decisio
 
 ## 🖥️ Estructura del proyecto
 
+```
 mi_bot_dao/
-├── bot.py # Bot principal
-├── webapp.py # Interfaz Flask
-├── deploy.py # Despliegue del contrato
-├── interact.py # Interacción con la DAO
-├── SimpleDAO.sol # Contrato inteligente básico
-├── requirements.txt # Dependencias Python
-├── README.md # Este archivo
+├── bot.py              # Bot principal
+├── webapp.py           # Interfaz Flask
+├── deploy.py           # Despliegue del contrato
+├── interact.py         # Interacción con la DAO
+├── SimpleDAO.sol       # Contrato inteligente básico
+├── requirements.txt    # Dependencias Python
+├── README.md           # Este archivo
 └── templates/
-└── index.html # Interfaz web
+    └── index.html      # Interfaz web
+```
 
 ---
 
@@ -48,25 +52,61 @@ mi_bot_dao/
 - MetaMask con cuenta de Ganache importada
 - Archivo `.env` con tu clave privada (nunca subir):
 
+```
 PRIVATE_KEY=0xTU_CLAVE_PRIVADA
+```
 
 ---
 
-📷 Vista del sistema
+## ▶️ Cómo ejecutar
+
+1. Instala las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Ejecuta el bot:
+
+```bash
+python3 bot.py
+```
+
+3. Ejecuta la interfaz web:
+
+```bash
+python3 webapp.py
+```
+
+4. Abre en el navegador: [http://localhost:5001](http://localhost:5001)
+
+---
+
+## 📷 Vista del sistema
 
 ![captura](captura.png)
 
-🔒 Seguridad
-No se suben claves privadas (se almacenan en .env)
+> Esta imagen muestra el historial de decisiones del bot, los movimientos simulados de inversión y la interacción con la DAO.
 
-🛠️ Futuras mejoras
-Conexión a testnet (Goerli, Sepolia)
+---
 
-Gobernanza avanzada: tiempo de votación, quórum, delegaciones
+## 🔒 Seguridad
 
-Análisis de sentimiento social (Twitter, Reddit)
+- No se suben claves privadas (se almacenan en `.env`)
+- `.env` está protegido por `.gitignore`
+- El historial Git ha sido limpiado para eliminar cualquier clave previa
 
-Panel web con más estadísticas
+---
 
-📄 Licencia
+## 🛠️ Futuras mejoras
+
+- Conexión a testnet (Goerli, Sepolia)
+- Gobernanza avanzada: tiempo de votación, quórum, delegaciones
+- Análisis de sentimiento social (Twitter, Reddit)
+- Panel web con más estadísticas
+
+---
+
+## 📄 Licencia
+
 MIT — libre para usar, modificar y compartir.
