@@ -54,7 +54,7 @@ PRIVATE_KEY=0xTU_CLAVE_PRIVADA
 
 📷 Vista del sistema
 
-![Uploading captura.png…]()
+![captura](captura.png)
 
 🔒 Seguridad
 No se suben claves privadas (se almacenan en .env)
