@@ -25,29 +25,35 @@ def calcular_sma(lista_precios):
 
 # --------------------- ANÁLISIS --------------------------
 def analizar(precios):
-    btc_actual = precios["bitcoin"]["usd"]
-    eth_actual = precios["ethereum"]["usd"]
+    historial_btc = obtener_historial("bitcoin")
+    historial_eth = obtener_historial("ethereum")
 
-    sma_btc = calcular_sma(obtener_historial("bitcoin"))
-    sma_eth = calcular_sma(obtener_historial("ethereum"))
+    sma_btc_r, sma_btc_l = calcular_smas(historial_btc)
+    sma_eth_r, sma_eth_l = calcular_smas(historial_eth)
 
     mensajes = []
-    if btc_actual < sma_btc * 0.97:
-        mensajes.append("BTC está por debajo de su promedio → Posible compra")
-    elif btc_actual > sma_btc * 1.05:
-        mensajes.append("BTC está sobrevalorado → Evitar compra")
-    if eth_actual < sma_eth * 0.97:
-        mensajes.append("ETH está por debajo de su promedio → Posible compra")
-    elif eth_actual > sma_eth * 1.05:
-        mensajes.append("ETH está sobrevalorado → Evitar compra")
 
-    return " | ".join(mensajes) if mensajes else "Mercado estable"
+    if sma_btc_r > sma_btc_l and btc_actual > sma_btc_r:
+        mensajes.append("📈 BTC señal de compra (cruce dorado + confirmación)")
+    elif sma_btc_r < sma_btc_l:
+        mensajes.append("⚠️ BTC señal de venta (cruce de la muerte)")
+
+    if sma_eth_r > sma_eth_l and eth_actual > sma_eth_r:
+        mensajes.append("📈 ETH señal de compra (cruce dorado + confirmación)")
+    elif sma_eth_r < sma_eth_l:
+        mensajes.append("⚠️ ETH señal de venta (cruce de la muerte)")
+
+    if not mensajes:
+        return "Mercado estable"
+    return " | ".join(mensajes)
 
 # -------------------- CSV HISTORIAL ----------------------
 def archivo_existe():
     return os.path.isfile("historial_bot.csv")
 
-def registrar_decision(precios, decision):
+def registrar_decision(precios, decision)
+    if "compra" in decision.lower() or "venta" in decision.lower():
+        simular_inversion(decision):
     fila = {
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "precio_btc": precios["bitcoin"]["usd"],
@@ -125,6 +131,8 @@ def ciclo():
         print("Decisión del bot:", decision)
 
         registrar_decision(precios, decision)
+    if "compra" in decision.lower() or "venta" in decision.lower():
+        simular_inversion(decision)
 
         if "compra" in decision.lower():
             proposal_id, contract, account, private_key, web3 = enviar_propuesta_dao(decision)
@@ -166,3 +174,12 @@ def ejecutar_propuestas_pendientes(contract, account, private_key, web3):
 while True:
     schedule.run_pending()
     time.sleep(1)
+
+def calcular_smas(lista_precios):
+    sma_rapida = sum(lista_precios[-3:]) / 3
+    sma_lenta = sum(lista_precios) / len(lista_precios)
+    return sma_rapida, sma_lenta
+
+def simular_inversion(decision):
+    with open("fondos_virtuales.log", "a") as f:
+        f.write(f"{datetime.now()} → {decision}\n")
